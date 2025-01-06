@@ -250,7 +250,6 @@ export default function AppCard() {
         </div>
       </div>
 
-      {/* <div className="bg-transparent relative border-transparent"> */}
       {hover && (
         <div
           className=" border-red-500 border rounded-t-xl rounded-b-xl shadow-lg w-[300px] h-[100px]transition-transform duration-300 bg-white h-[500px]"
@@ -305,7 +304,6 @@ export default function AppCard() {
           </div>
         </div>
       )}
-      {/* </div> */}
     </div>
   );
 }
