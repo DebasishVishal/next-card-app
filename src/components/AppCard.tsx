@@ -147,10 +147,10 @@ export default function AppCard() {
                   } text-muted-foreground text-sm`}
                 >
                   &quot;consectetur eu qui ipsum velit non labore consequat
-                  proident in adipisicing consectetur aliqua pariatur dolor
-                  proident in adipisicing consectetur aliqua pariatur dolor
-                  proident in adipisicing consectetur aliqua pariatur dolor
-                  proident in adipisicing consectetur dolor occaecat Lorem&quot;
+                  proident in adipisicing consectetur pariatur dolor proident in
+                  adipisicing consectetur aliqua pariatur dolor proident in
+                  adipisicing consectetur aliqua pariatur dolor proident in
+                  adipisicing consectetur dolor occaecat Lorem&quot;
                 </p>
                 <Button
                   variant="link"
