@@ -170,7 +170,7 @@ export default function AppCard({ app, index, page, limit }) {
 
         {/* Right Section */}
         <div
-          className="flex flex-col pt-2 rounded-b-xl 2xl:border-l 2xl:border-t-0 hover:border-d-red-500 border-t 2xl:rounded-r-xl"
+          className="flex flex-col pt-2 rounded-b-xl 2xl:rounded-l-none 2xl:border-l 2xl:border-t-0 hover:border-d-red-500 border-t 2xl:rounded-r-xl"
           style={{
             backgroundImage:
               "url(https://online.citi.com/JRS/banners/hero_background/Citi-futuristic-angles-bg-compressed.jpg)",
