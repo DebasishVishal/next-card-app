@@ -52,9 +52,13 @@ const PagenationComponent = ({
             Showing
             <span className="font-semibold text-black">
               {" "}
-              {(page - 1) * limit + 1}{" "}
+              {(page - 1) * limit + 1}
+              {" -"}
             </span>
-            -<span className="font-semibold text-black"> {page * limit} </span>
+            <span className="font-semibold text-black">
+              {" "}
+              {page !== totalPage ? page * limit : totalResults}{" "}
+            </span>
             out of
             <span className="font-semibold text-black"> {totalResults} </span>
             results
