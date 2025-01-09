@@ -5,6 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatNumber(num: Number) {
+export function formatNumber(num: number) {
   return Number.isInteger(num) ? num : num.toFixed(2);
 }
