@@ -80,13 +80,13 @@ export default function Home() {
   }
 
   return (
-    <div className="mx-10 px-4">
+    <div className="grid mx-auto px-4">
       <h1 className="text-3xl text-center font-normal mb-4 pt-5">
         App Listings
       </h1>
       <div className="border-b"></div>
       {/* Card List */}
-      <div className="grid gap-4 ">
+      <div className="grid gap-5 justify-center">
         {users.map((app, index) => (
           <AppCard
             key={app._id}

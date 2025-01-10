@@ -16,11 +16,11 @@ export default function AppCard({ app, index, page, limit }) {
 
   return (
     <div
-      className="relative grid grid-cols-1 col-span-1 md:grid-cols-3 gap-x-4 mt-10 pl-12 ml-40 mr-20"
+      className="relative p-2 grid grid-cols-1 min-w-[210px] max-w-[100rem] customResolution:grid-cols-3 gap-x-4 mt-10 xl:pl-12 2xl:ml-40 2xl:mr-20"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="absolute -top-3.5 left-6 pl-12">
+      <div className="customSmallResolution:absolute relative customSmallResolution:-top-1 top-3.5 left-7 customSmallResolution:left-6 customSmallResolution:pl-12 mr-10 ">
         {index <= 2 ? (
           <Badge
             variant="outline"
@@ -37,13 +37,13 @@ export default function AppCard({ app, index, page, limit }) {
 
       {/* Main Card */}
       <div
-        className={`col-span-2 grid grid-cols-1 2xl:grid-cols-3 transition-all duration-200 2xl:rounded-xl border rounded-t-xl rounded-b-xl
+        className={`col-span-2 grid grid-cols-1 customResolution:grid-cols-3 transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl
         ${hover ? "border-red-500 shadow-2xl" : ""}`}
       >
         {/* Left Section */}
-        <div className="rounded-t-xl 2xl:rounded-l-xl lg:col-span-2 flex flex-col gap-6 p-6 bg-white pl-8">
+        <div className="rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 flex flex-col gap-6 p-8 pl-8">
           {/* Header Section */}
-          <div className="flex items-start gap-2">
+          <div className="flex flex-col customResolution:flex-row items-start gap-2">
             {/* App Icon */}
             <div className="items-center flex flex-col space-x-2">
               <img
@@ -92,7 +92,7 @@ export default function AppCard({ app, index, page, limit }) {
           <div className="grid grid-row gap-6">
             {/* Pros */}
             <div>
-              <h3 className="flex items-center gap-2 text-md font-semibold">
+              <h3 className="flex items-center gap-2 text-md font-semibold text-primary">
                 <ThumbsUp className="w-4 h-4" /> Pros
               </h3>
               <div className="space-y-2">
@@ -126,7 +126,7 @@ export default function AppCard({ app, index, page, limit }) {
 
           {/* Review Section */}
           <div className="p-4 bg-white border border-dashed rounded-lg">
-            <div className="grid grid-flow-col items-start">
+            <div className="grid grid-col-1 customSmallResolution:grid-flow-col items-start">
               {/* Image */}
               <div className="">
                 <img
@@ -170,14 +170,14 @@ export default function AppCard({ app, index, page, limit }) {
 
         {/* Right Section */}
         <div
-          className="flex flex-col pt-2 rounded-b-xl 2xl:rounded-l-none 2xl:border-l 2xl:border-t-0 hover:border-d-red-500 border-t 2xl:rounded-r-xl"
+          className="flex flex-col pt-2 w-full rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
           style={{
             backgroundImage:
               "url(https://online.citi.com/JRS/banners/hero_background/Citi-futuristic-angles-bg-compressed.jpg)",
           }}
         >
           {/* Store Owner's Tip */}
-          <div className="p-4 bg-blue-50 border border-blue-300 rounded-lg ml-5 mr-5 mb-4 mt-3">
+          <div className="p-4 grid customSmallResolution:grid-cols-1 bg-blue-50 border border-blue-300 rounded-lg ml-5 mr-5 mb-4 mt-3">
             <div className="flex items-center text-sm font-semibold relative">
               <img
                 src="https://www.greatschools.org/assets/school_profiles/brown-owl-febd0a2f350bc84d4080cf9bdbe231373b8608e9c7cc45aff419f3dec0520470.svg"
@@ -186,13 +186,13 @@ export default function AppCard({ app, index, page, limit }) {
                 width={32}
                 className="absolute -top-7" // Set width and height for the image
               />
-              <h3 className="mt-0.5 ml-10 text-sm font-bold absolute -top-3">
+              <h3 className="mt-0.5 ml-10 text-sm font-bold relative customSmallResolution:absolute -top-3">
                 Store Owner&apos;s Tip
               </h3>
             </div>
-            <p className="text-sm text-neutral-600 mt-3 font-normal pt-0.5">
+            <div className="text-sm text-neutral-600 mt-3 font-normal pt-0.5">
               Up-to-date tech: Works with the latest versions.
-            </p>
+            </div>
           </div>
 
           {/* Stats */}
@@ -207,7 +207,7 @@ export default function AppCard({ app, index, page, limit }) {
                 <p className="text-xs text-muted-foreground text-gray-500">
                   SD Points
                 </p>
-                <Info className="text-gray-500 w-3 h-3 ml-1" />
+                <Info className="hidden customSmallResolution:block text-gray-500 w-3 h-3 ml-1" />
               </div>
             </div>
             <div className="border bg-white p-4 rounded-lg flex flex-col mr-5">
@@ -216,7 +216,7 @@ export default function AppCard({ app, index, page, limit }) {
                 <p className="text-xs text-muted-foreground text-gray-500">
                   Market Share
                 </p>
-                <Info className="text-gray-500 w-3 h-3 ml-1" />
+                <Info className="hidden customSmallResolution:block text-gray-500 w-3 h-3 ml-1" />
               </div>
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function AppCard({ app, index, page, limit }) {
           </div>
 
           {/* Button */}
-          <Button className="h-20 bg-black rounded-lg font-bold text-white text-2xl hover:bg-neutral-700 mt-4 xl:mt-auto  ml-5 mr-5 mb-6 flex flex-col gap-0 items-center">
+          <Button className="h-20 bg-black rounded-lg font-bold text-white text-2xl hover:bg-neutral-700 mt-4 customResolution:mt-auto  ml-5 mr-5 mb-6 flex flex-col gap-0 items-center">
             <span>Install Now</span>
             <span className="text-xs font-normal">
               Rated {app.rating} by {app.totalReview} store owners
@@ -265,7 +265,7 @@ export default function AppCard({ app, index, page, limit }) {
 
       {hover && (
         <div
-          className=" border-red-500 border rounded-xl shadow-lg w-[300px] h-[100px]transition-transform duration-300 bg-white h-[500px]"
+          className="hidden customResolution:block border-red-500 border rounded-xl shadow-lg max-w-[300px] transition-transform duration-300 bg-white h-max"
           onMouseEnter={() => setHover(true)}
         >
           <div className="w-full flex flex-col bg-contain bg-center rounded-t-xl p-0 h-[240px] relative overflow-hidden">
