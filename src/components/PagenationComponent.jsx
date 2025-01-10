@@ -46,8 +46,8 @@ const PagenationComponent = ({
   );
   return (
     <div className="flex items-center justify-center border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-      <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-        <div>
+      <div className=" sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <div className="justify-center sm:justify-normal flex-1 flex">
           <p className="text-sm text-gray-500">
             Showing
             <span className="font-semibold text-black">
