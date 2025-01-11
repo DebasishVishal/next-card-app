@@ -11,11 +11,19 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        geist: [
+          "__GeistSans_3a0388",
+          "__GeistSans_Fallback_3a0388",
+          "sans-serif",
+        ], // Added Geist as a font family
+      },
       screens: {
-        customResolution: "1115px",
+        customResolution: "1135px",
         customSmallResolution: "333px",
       },
       colors: {
+        customRed: "#ff5c61",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

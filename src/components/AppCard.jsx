@@ -16,15 +16,15 @@ export default function AppCard({ app, index, page, limit }) {
 
   return (
     <div
-      className="relative p-2 grid grid-cols-1 min-w-[210px] max-w-[100rem] customResolution:grid-cols-3 gap-x-4 mt-10 xl:pl-12 2xl:ml-40 2xl:mr-20"
+      className="relative flex flex-col customResolution:flex-row min-w-[210px] max-w-[80rem] m-6"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="customSmallResolution:absolute relative customSmallResolution:-top-1 top-3.5 left-7 customSmallResolution:left-6 customSmallResolution:pl-12 mr-10 ">
+      <div className="customSmallResolution:absolute relative customSmallResolution:-top-3 top-3.5 left-7 customSmallResolution:left-8 mr-10">
         {index <= 2 ? (
           <Badge
             variant="outline"
-            className="text-sm bg-red-500 text-white rounded-md border px-2.5 py-0.5"
+            className="text-sm bg-customRed text-white rounded-md border px-2.5 py-0.5"
           >
             #{index + 1} Highly Recommended
           </Badge>
@@ -37,22 +37,22 @@ export default function AppCard({ app, index, page, limit }) {
 
       {/* Main Card */}
       <div
-        className={`col-span-2 grid grid-cols-1 customResolution:grid-cols-3 transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl
+        className={`col-span-2 grid grid-cols-1 max-w-[80rem] customResolution:grid-cols-3 transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl mr-0 customResolution:mr-3.5
         ${hover ? "border-red-500 shadow-2xl" : ""}`}
       >
         {/* Left Section */}
-        <div className="rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 flex flex-col gap-6 p-8 pl-8">
+        <div className="flex flex-col rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 gap-4 p-8">
           {/* Header Section */}
           <div className="flex flex-col customResolution:flex-row items-start gap-2">
             {/* App Icon */}
-            <div className="items-center flex flex-col space-x-2">
+            <div className="flex flex-col">
               <img
                 src={app.iconUrl}
                 alt="App Icon"
                 className="w-20 h-20 rounded-xl border"
               />
 
-              <div className="flex py-2 pr-2 left-0 text-start items-center">
+              <div className="flex pt-2 pr-2 left-0 text-start items-center">
                 <Checkbox id="terms1" />
                 <div className="grid gap-1.5 leading-none ml-1">
                   <label
@@ -66,7 +66,7 @@ export default function AppCard({ app, index, page, limit }) {
             </div>
 
             {/* Details */}
-            <div className="flex-1 space-y-1">
+            <div className="flex-1 space-y-1 pt-3 customResolution:p-0">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">{app.name}</h2>
               </div>
@@ -263,60 +263,56 @@ export default function AppCard({ app, index, page, limit }) {
         </div>
       </div>
 
-      {hover && (
-        <div
-          className="hidden customResolution:block border-red-500 border rounded-xl shadow-lg max-w-[300px] transition-transform duration-300 bg-white h-max"
-          onMouseEnter={() => setHover(true)}
-        >
-          <div className="w-full flex flex-col bg-contain bg-center rounded-t-xl p-0 h-[240px] relative overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-              alt="temp bg"
-              className="w-full"
-            />
-            <div className="absolute inset-0 px-2">
-              <div className="h-full flex">
-                <div
-                  className="leading-none p-4 rounded-2xl mt-auto mb-2 text-2xl font-semibold tracking-tight text-white border w-full bg-opacity-80 backdrop-filter backdrop-blur-sm"
-                  style={{
-                    backgroundColor: "rgba(193, 20, 20, 0.8)",
-                    borderColor: "rgb(229, 29, 29)",
-                  }}
-                >
-                  <p>Install in</p>
-                  <p>Your Store Now</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full p-6 pt-4 space-y-4 rounded-b-xl">
-            <div className="max-w-[275px] w-full space-y-2">
-              <Input type="text" placeholder="Full Name" className="rounded" />
-              <Input
-                type="email"
-                placeholder="Your Email"
-                className="rounded"
-              />
-              <Input
-                type="url"
-                placeholder="Your Shopify Store URL"
-                className="rounded"
-              />
-            </div>
-
-            <div className="max-w-[275px] w-full flex flex-col items-center gap-2 ">
-              <Button className="w-full bg-red-500 hover:bg-red-400 font-semibold text-base">
-                Schedule Now
-              </Button>
-              <div className="bg-blue-100 rounded-md w-max px-2.5">
-                <span className="text-sm text-blue-900 font-semibold">
-                  72 customers chose this
-                </span>
+      <div
+        className={`${
+          hover ? "visible" : "invisible"
+        } hidden customResolution:block border-red-500 border rounded-xl shadow-lg max-w-[300px] transition-transform duration-300 bg-white h-max`}
+        onMouseEnter={() => setHover(true)}
+      >
+        <div className="w-full flex flex-col bg-contain bg-center rounded-t-xl p-0 h-[240px] relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
+            alt="temp bg"
+            className="w-full"
+          />
+          <div className="absolute inset-0 px-2">
+            <div className="h-full flex">
+              <div
+                className="leading-none p-4 rounded-2xl mt-auto mb-2 text-2xl font-semibold tracking-tight text-white border w-full bg-opacity-80 backdrop-filter backdrop-blur-sm"
+                style={{
+                  backgroundColor: "rgba(193, 20, 20, 0.8)",
+                  borderColor: "rgb(229, 29, 29)",
+                }}
+              >
+                <p>Install in</p>
+                <p>Your Store Now</p>
               </div>
             </div>
           </div>
         </div>
-      )}
+        <div className="w-full p-6 pt-4 space-y-4 rounded-b-xl">
+          <div className="max-w-[275px] w-full space-y-2">
+            <Input type="text" placeholder="Full Name" className="rounded" />
+            <Input type="email" placeholder="Your Email" className="rounded" />
+            <Input
+              type="url"
+              placeholder="Your Shopify Store URL"
+              className="rounded"
+            />
+          </div>
+
+          <div className="max-w-[275px] w-full flex flex-col items-center gap-2 ">
+            <Button className="w-full bg-customRed hover:bg-customRed/80 font-semibold text-base">
+              Schedule Now
+            </Button>
+            <div className="bg-blue-100 rounded-md w-max px-2.5">
+              <span className="text-sm text-blue-900 font-semibold">
+                72 customers chose this
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

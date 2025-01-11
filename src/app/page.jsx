@@ -6,6 +6,7 @@ import { Spinner } from "@nextui-org/spinner";
 import { useState } from "react";
 import { getUsers, getUsersData, getUsersLength } from "@/data/users";
 import { useEffect } from "react";
+import TestComponent from "@/components/TestComponent";
 
 export default function Home() {
   const [page, setPage] = useState(1);
@@ -80,13 +81,13 @@ export default function Home() {
   }
 
   return (
-    <div className="grid mx-auto px-4">
+    <div className="grid grid-cols-1 font-geist">
       <h1 className="text-3xl text-center font-normal mb-4 pt-5">
         App Listings
       </h1>
       <div className="border-b"></div>
       {/* Card List */}
-      <div className="grid gap-5 justify-center">
+      <div className="flex flex-col mx-auto">
         {users.map((app, index) => (
           <AppCard
             key={app._id}
@@ -96,6 +97,7 @@ export default function Home() {
             limit={limit}
           />
         ))}
+        {/* <TestComponent /> */}
       </div>
       <div className="border-b mt-10"></div>
       {/* Pagination */}
