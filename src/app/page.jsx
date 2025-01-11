@@ -4,7 +4,7 @@ import AppCard from "@/components/AppCard";
 import PaginationComponent from "@/components/PagenationComponent";
 import { Spinner } from "@nextui-org/spinner";
 import { useState } from "react";
-import { getUsers, getUsersData, getUsersLength } from "@/data/users";
+import { getUsersData } from "@/data/users";
 import { useEffect } from "react";
 import TestComponent from "@/components/TestComponent";
 
@@ -81,8 +81,8 @@ export default function Home() {
   }
 
   return (
-    <div className="grid grid-cols-1 font-geist">
-      <h1 className="text-3xl text-center font-normal mb-4 pt-5">
+    <div className="grid grid-cols-1 font-sans">
+      <h1 className="text-3xl text-center font-normal mb-4 pt-5 font-geist">
         App Listings
       </h1>
       <div className="border-b"></div>

@@ -7,6 +7,7 @@ import BadgeRating from "./BadgeRating";
 import { Check, ThumbsUp, ThumbsDown, X, Info } from "lucide-react";
 import dayjs from "dayjs";
 import Link from "next/link";
+import ExpandingReview from "./ExpandingReview";
 
 export default function AppCard({ app, index, page, limit }) {
   page === 1 ? index : (index = (page - 1) * limit + index);
@@ -24,7 +25,7 @@ export default function AppCard({ app, index, page, limit }) {
         {index <= 2 ? (
           <Badge
             variant="outline"
-            className="text-sm bg-customRed text-white rounded-md border px-2.5 py-0.5"
+            className="text-sm bg-customRed text-white rounded-md border px-3 py-0.5"
           >
             #{index + 1} Highly Recommended
           </Badge>
@@ -41,7 +42,7 @@ export default function AppCard({ app, index, page, limit }) {
         ${hover ? "border-red-500 shadow-2xl" : ""}`}
       >
         {/* Left Section */}
-        <div className="flex flex-col rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 gap-4 p-8">
+        <div className="flex flex-col rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 gap-4 p-6">
           {/* Header Section */}
           <div className="flex flex-col customResolution:flex-row items-start gap-2">
             {/* App Icon */}
@@ -68,19 +69,19 @@ export default function AppCard({ app, index, page, limit }) {
             {/* Details */}
             <div className="flex-1 space-y-1 pt-3 customResolution:p-0">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold">{app.name}</h2>
+                <h2 className="text-xl font-bold">{app.name}</h2>
               </div>
               <p className="text-sm text-muted-foreground -mt-1">
                 {app.taglineGpt}
               </p>
               <p className="text-sm font-semibold">
-                <span className="font-medium">Pricing Plans:</span>{" "}
+                <span className="font-semibold">Pricing Plans:</span>{" "}
                 <span className="text-blue-500">
                   Free, $19/month, $49/month, $69/month
                 </span>
               </p>
               <p className="text-sm font-semibold">
-                <span className="font-medium">Free Trial:</span>{" "}
+                <span className="font-semibold">Free Trial:</span>{" "}
                 <span className="text-green-500">14 days</span>
               </p>
             </div>
@@ -89,10 +90,10 @@ export default function AppCard({ app, index, page, limit }) {
           <div className="border-b"></div>
 
           {/* Pros & Cons */}
-          <div className="grid grid-row gap-6">
+          <div className="grid grid-row gap-6 mb-2">
             {/* Pros */}
             <div>
-              <h3 className="flex items-center gap-2 text-md font-semibold text-primary">
+              <h3 className="flex items-center gap-2 text-md font-semibold text-primary mb-2">
                 <ThumbsUp className="w-4 h-4" /> Pros
               </h3>
               <div className="space-y-2">
@@ -108,7 +109,7 @@ export default function AppCard({ app, index, page, limit }) {
             </div>
             {/* Cons */}
             <div>
-              <h3 className="flex items-center gap-2 text-md font-semibold">
+              <h3 className="flex items-center gap-2 text-md font-semibold mb-2">
                 <ThumbsDown className="w-4 h-4" /> Cons
               </h3>
               <div className="space-y-2">
@@ -125,9 +126,10 @@ export default function AppCard({ app, index, page, limit }) {
           </div>
 
           {/* Review Section */}
-          <div className="p-4 bg-white border border-dashed rounded-lg">
+          <ExpandingReview />
+          {/* <div className="p-4 bg-white border border-dashed rounded-lg">
             <div className="grid grid-col-1 customSmallResolution:grid-flow-col items-start">
-              {/* Image */}
+              Image
               <div className="">
                 <img
                   src="images/temp-profile-picture.jpg"
@@ -135,13 +137,13 @@ export default function AppCard({ app, index, page, limit }) {
                   className="w-12 h-12 mr-3 rounded-full justify-center items-center" // Adjust width, height, and spacing
                 />
               </div>
-              {/* Content Section */}
+              Content Section
               <div className="">
-                {/* Paragraph with Expand/Collapse Button */}
+                Paragraph with Expand/Collapse Button
                 <p
                   className={`${
                     isExpanded ? "line-clamp-none" : "line-clamp-2"
-                  } text-muted-foreground text-sm text-gray-500`}
+                  } text-muted-foreground text-sm`}
                 >
                   &quot;consectetur eu qui ipsum velit non labore consequat
                   incididunt eiusmod esse excepteur esse deserunt esse minim
@@ -155,17 +157,19 @@ export default function AppCard({ app, index, page, limit }) {
                 >
                   {isExpanded ? "less" : "more"}
                 </Button>
-                {/* Footer with Rating and Location */}
-                <div className="flex items-center text-sm mt-2 ">
+                Footer with Rating and Location
+                <div className="flex items-center text-sm mt-2">
                   <span>
                     5⭐ <span className="font-semibold"> Elevated S</span>,
                     United States
                   </span>
-                  <span className="text-gray-500 pl-1">15 Jul 2022</span>
+                  <span className="text-muted-foreground pl-1">
+                    15 Jul 2022
+                  </span>
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Section */}
@@ -223,7 +227,7 @@ export default function AppCard({ app, index, page, limit }) {
 
           {/* Summary Section */}
           <div className="ml-5 mr-5 mt-2 pt-4">
-            <h4 className="font-semibold">Summary</h4>
+            <h4 className="font-semibold text-sm">Summary</h4>
             <div className="mt-1.5 xl:mb-6">
               <div className="flex justify-between text-sm text-gray-500">
                 <p>Launch Date</p>
@@ -254,7 +258,7 @@ export default function AppCard({ app, index, page, limit }) {
           </div>
 
           {/* Button */}
-          <Button className="h-20 bg-black rounded-lg font-bold text-white text-2xl hover:bg-neutral-700 mt-4 customResolution:mt-auto  ml-5 mr-5 mb-6 flex flex-col gap-0 items-center">
+          <Button className="h-20 bg-black rounded-lg text-white font-semibold text-xl hover:bg-neutral-800 mt-6 customResolution:mt-auto  ml-5 mr-5 mb-6 flex flex-col gap-0 items-center">
             <span>Install Now</span>
             <span className="text-xs font-normal">
               Rated {app.rating} by {app.totalReview} store owners
@@ -269,7 +273,7 @@ export default function AppCard({ app, index, page, limit }) {
         } hidden customResolution:block border-red-500 border rounded-xl shadow-lg max-w-[300px] transition-transform duration-300 bg-white h-max`}
         onMouseEnter={() => setHover(true)}
       >
-        <div className="w-full flex flex-col bg-contain bg-center rounded-t-xl p-0 h-[240px] relative overflow-hidden">
+        <div className="w-full flex flex-col bg-contain bg-center rounded-t-xl p-0 h-[270px] relative overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydGlzdHxlbnwwfHwwfHx8MA%3D%3D"
             alt="temp bg"

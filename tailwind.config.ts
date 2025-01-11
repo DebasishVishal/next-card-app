@@ -12,11 +12,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        geist: [
-          "__GeistSans_3a0388",
-          "__GeistSans_Fallback_3a0388",
-          "sans-serif",
-        ], // Added Geist as a font family
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
       screens: {
         customResolution: "1135px",
