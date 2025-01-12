@@ -17,11 +17,11 @@ export default function AppCard({ app, index, page, limit }) {
 
   return (
     <div
-      className="relative flex flex-col customResolution:flex-row min-w-[210px] max-w-[80rem] m-6"
+      className="relative flex flex-col customResolution:flex-row min-w-[210px] max-w-[80rem] m-4 sm:m-6"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="customSmallResolution:absolute relative customSmallResolution:-top-3 top-3.5 left-7 customSmallResolution:left-8 mr-10">
+      <div className="customSmallResolution:absolute relative customSmallResolution:-top-3 top-3.5 left-7 customSmallResolution:left-6 mr-10">
         {index <= 2 ? (
           <Badge
             variant="outline"
@@ -38,7 +38,7 @@ export default function AppCard({ app, index, page, limit }) {
 
       {/* Main Card */}
       <div
-        className={`col-span-2 grid grid-cols-1 max-w-[80rem] customResolution:grid-cols-3 transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl mr-0 customResolution:mr-3.5
+        className={`col-span-2 grid grid-cols-1 max-w-[80rem] customResolution:grid-cols-3 transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl mr-0 customResolution:mr-4
         ${hover ? "border-red-500 shadow-2xl" : ""}`}
       >
         {/* Left Section */}
@@ -174,7 +174,7 @@ export default function AppCard({ app, index, page, limit }) {
 
         {/* Right Section */}
         <div
-          className="flex flex-col pt-2 w-full rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
+          className="flex flex-col pt-3 w-full rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
           style={{
             backgroundImage:
               "url(https://online.citi.com/JRS/banners/hero_background/Citi-futuristic-angles-bg-compressed.jpg)",
@@ -182,19 +182,19 @@ export default function AppCard({ app, index, page, limit }) {
         >
           {/* Store Owner's Tip */}
           <div className="p-4 grid customSmallResolution:grid-cols-1 bg-blue-50 border border-blue-300 rounded-lg ml-5 mr-5 mb-4 mt-3">
-            <div className="flex items-center text-sm font-semibold relative">
+            <div className="flex items-center text-sm font-semibold relative mb-2">
               <img
                 src="https://www.greatschools.org/assets/school_profiles/brown-owl-febd0a2f350bc84d4080cf9bdbe231373b8608e9c7cc45aff419f3dec0520470.svg"
                 alt="owl"
                 height={32}
                 width={32}
-                className="absolute -top-7" // Set width and height for the image
+                className="absolute -top-6" // Set width and height for the image
               />
-              <h3 className="mt-0.5 ml-10 text-sm font-bold relative customSmallResolution:absolute -top-3">
+              <h3 className="mt-1 ml-10 text-sm font-bold relative customSmallResolution:absolute -top-3">
                 Store Owner&apos;s Tip
               </h3>
             </div>
-            <div className="text-sm text-neutral-600 mt-3 font-normal pt-0.5">
+            <div className="text-sm text-neutral-600 mt-2 font-normal">
               Up-to-date tech: Works with the latest versions.
             </div>
           </div>

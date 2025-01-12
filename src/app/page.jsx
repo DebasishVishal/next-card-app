@@ -85,7 +85,7 @@ export default function Home() {
       <h1 className="text-3xl text-center font-normal mb-4 pt-5 font-geist">
         App Listings
       </h1>
-      <div className="border-b"></div>
+      <div className="border-b mb-2"></div>
       {/* Card List */}
       <div className="flex flex-col mx-auto">
         {users.map((app, index) => (
