@@ -42,7 +42,7 @@ export default function AppCard({ app, index, page, limit }) {
         ${hover ? "border-red-500 shadow-2xl" : ""}`}
       >
         {/* Left Section */}
-        <div className="flex flex-col rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 gap-4 p-6">
+        <div className="flex flex-col w-full customResolution:w-[77%] rounded-t-xl rounded-tr-none customResolution:rounded-l-xl lg:col-span-2 gap-4 p-6">
           {/* Header Section */}
           <div className="flex flex-col customResolution:flex-row items-start gap-2">
             {/* App Icon */}
@@ -174,7 +174,7 @@ export default function AppCard({ app, index, page, limit }) {
 
         {/* Right Section */}
         <div
-          className="flex flex-col pt-3 w-full customResolution:w-[42%] rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
+          className="flex flex-col pt-3 w-full customResolution:w-[41%] rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
           style={{
             backgroundImage:
               "url(https://online.citi.com/JRS/banners/hero_background/Citi-futuristic-angles-bg-compressed.jpg)",
