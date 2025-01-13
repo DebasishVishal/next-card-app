@@ -87,7 +87,7 @@ export default function Home() {
       </h1>
       <div className="border-b mb-2"></div>
       {/* Card List */}
-      <div className="flex flex-col mx-auto">
+      <div className="flex flex-col customResolution:mx-auto">
         {users.map((app, index) => (
           <AppCard
             key={app._id}

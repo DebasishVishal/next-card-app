@@ -17,7 +17,7 @@ export default function AppCard({ app, index, page, limit }) {
 
   return (
     <div
-      className="relative flex flex-col customResolution:flex-row min-w-[210px] max-w-[80rem] m-4 sm:m-6"
+      className="relative flex flex-col customResolution:flex-row min-w-[210px] max-w-[82rem] m-4 sm:m-6 text-neutral-950"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -38,7 +38,7 @@ export default function AppCard({ app, index, page, limit }) {
 
       {/* Main Card */}
       <div
-        className={`col-span-2 grid grid-cols-1 max-w-[80rem] customResolution:grid-cols-3 transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl mr-0 customResolution:mr-4
+        className={`flex flex-col customResolution:flex-row transition-all duration-200 lg:rounded-xl border rounded-t-xl rounded-b-xl mr-0 customResolution:mr-4
         ${hover ? "border-red-500 shadow-2xl" : ""}`}
       >
         {/* Left Section */}
@@ -67,9 +67,9 @@ export default function AppCard({ app, index, page, limit }) {
             </div>
 
             {/* Details */}
-            <div className="flex-1 space-y-1 pt-3 customResolution:p-0">
+            <div className="flex-1 space-y-0.5 pt-3 customResolution:p-0">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold">{app.name}</h2>
+                <h2 className="text-2xl font-bold">{app.name}</h2>
               </div>
               <p className="text-sm text-muted-foreground -mt-1">
                 {app.taglineGpt}
@@ -93,7 +93,7 @@ export default function AppCard({ app, index, page, limit }) {
           <div className="grid grid-row gap-6 mb-2">
             {/* Pros */}
             <div>
-              <h3 className="flex items-center gap-2 text-md font-semibold text-primary mb-2">
+              <h3 className="flex items-center gap-2 text-md font-semibold mb-2">
                 <ThumbsUp className="w-4 h-4" /> Pros
               </h3>
               <div className="space-y-2">
@@ -174,14 +174,14 @@ export default function AppCard({ app, index, page, limit }) {
 
         {/* Right Section */}
         <div
-          className="flex flex-col pt-3 w-full rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
+          className="flex flex-col pt-3 w-full customResolution:w-[42%] rounded-b-xl customResolution:rounded-l-none lg:border-l lg:border-t-0 hover:border-d-red-500 border-t customResolution:rounded-r-xl"
           style={{
             backgroundImage:
               "url(https://online.citi.com/JRS/banners/hero_background/Citi-futuristic-angles-bg-compressed.jpg)",
           }}
         >
           {/* Store Owner's Tip */}
-          <div className="p-4 grid customSmallResolution:grid-cols-1 bg-blue-50 border border-blue-300 rounded-lg ml-5 mr-5 mb-4 mt-3">
+          <div className="p-4 grid customSmallResolution:grid-cols-1 bg-blue-50 border border-blue-300 rounded-md ml-5 mr-5 mb-4 mt-3">
             <div className="flex items-center text-sm font-semibold relative mb-2">
               <img
                 src="https://www.greatschools.org/assets/school_profiles/brown-owl-febd0a2f350bc84d4080cf9bdbe231373b8608e9c7cc45aff419f3dec0520470.svg"
@@ -201,22 +201,22 @@ export default function AppCard({ app, index, page, limit }) {
 
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="border bg-white p-4 rounded-lg flex flex-col ml-5">
+            <div className="border bg-white p-4 rounded-md flex flex-col ml-5">
               <h3 className="text-xl font-bold tracking-tight">
                 {app.computedParams?.sd_points
                   ? Math.round(app.computedParams.sd_points)
                   : 0}
               </h3>
-              <div className="flex items-center mt-1">
+              <div className="flex items-center">
                 <p className="text-xs text-muted-foreground text-gray-500">
                   SD Points
                 </p>
                 <Info className="hidden customSmallResolution:block text-gray-500 w-3 h-3 ml-1" />
               </div>
             </div>
-            <div className="border bg-white p-4 rounded-lg flex flex-col mr-5">
+            <div className="border bg-white p-4 rounded-md flex flex-col mr-5">
               <h3 className="text-xl font-bold tracking-tight">12%</h3>
-              <div className="flex items-center mt-1">
+              <div className="flex items-center">
                 <p className="text-xs text-muted-foreground text-gray-500">
                   Market Share
                 </p>
@@ -231,7 +231,7 @@ export default function AppCard({ app, index, page, limit }) {
             <div className="mt-1.5 xl:mb-6">
               <div className="flex justify-between text-sm text-gray-500">
                 <p>Launch Date</p>
-                <p className="text-gray-700 font-semibold">
+                <p className="text-neutral-950 font-normal">
                   {dayjs(app.launchDate).format("DD MMM YYYY")}
                 </p>
               </div>
